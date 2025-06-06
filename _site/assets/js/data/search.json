@@ -1,71 +1,43 @@
 [
-  
+  {
+    "title": "How To Automate Prompt Engineering With Opro",
+    "url": "/automated-prompt-engineering/",
+    "categories": "",
+    "tags": "",
+    "date": "2025-06-06 00:00:00 +0200",
+    "content": "In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).  For example, CoT with a help of reasoning models (e.g.,..."
+  },
   {
     "title": "Phi Silica Small But Mighty Small Language Model",
     "url": "/phi-silica/",
     "categories": "",
     "tags": "",
     "date": "2024-12-22 00:00:00 +0100",
-    
-
-
-
-
-
-    
-    "snippet": "A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the constra...",
-    "content": "A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the constraints of NPU resources (since other models, in addition to Phi Silica, also need to fit on the chip).I also managed to contribute, albeit a little: Windows Blogs."
+    "content": "A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.    The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the con..."
   },
-  
   {
     "title": "Corpus Of Artificial Texts",
     "url": "/coat-corpus-of-artificial-texts/",
     "categories": "",
     "tags": "",
     "date": "2024-09-23 00:00:00 +0200",
-    
-
-
-
-
-
-    
-    "snippet": "I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.It is published with a help of Cambridge University Press. The work is...",
-    "content": "I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.It is published with a help of Cambridge University Press. The work is done during my research assistance at MMCP Lab, HSE University.CoAT is a large-scale corpus of human-written and AI-generated texts in Russian, spanning 6 domains and 13 different text generation models. The study provides insights into artificial text detection capabilities and challenges, highlighting the need for improved detection methods as language models continue to advance."
+    "content": "I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.    It is published with a help of Cambridge University Press. The wor..."
   },
-  
   {
     "title": "Asian Journey In 2022",
     "url": "/asian-journey/",
     "categories": "",
     "tags": "",
     "date": "2023-02-10 00:00:00 +0100",
-    
-
-
-
-
-
-    
-    "snippet": "I am fond of the Western attitude towards a gap year.There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc. In my case, the gap year turne...",
-    "content": "I am fond of the Western attitude towards a gap year.There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc. In my case, the gap year turned out to be involuntary. Furthermore, it extended far beyond a year. Nevertheless, it harmoniously aligned with the Western approach.I left Russia at the end of September and only found a new home in February. Although I have yet to tackle lengthy posts about each of the countries I had the opportunity to visit, I desire to showcase the route and document this extraordinary journey.Kazakhstan 🇰🇿 -&gt; India 🇮🇳 -&gt; Thailand 🇹🇭 -&gt; Malaysia 🇲🇾 -&gt; Thailand Again 🇹🇭 -&gt; Vietnam 🇻🇳… and finally, Serbia 🇷🇸.The power of such adventures lies in the everyday challenges. New challenges. Ones that had never arisen before. For instance, how does one mount a scooter if they have never even sat on a bicycle? How does one persuade stern Vietnamese border officials at Saigon airport that I am flying to Serbia not as a tourist, but for a new job awaiting me there?It was truly fascinating. I will never replicate anything similar."
+    "content": "I am fond of the Western attitude towards a gap year.  There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc.  In my case, the gap year tu..."
   },
-  
   {
     "title": "The Rps Race",
     "url": "/the-rps-race/",
     "categories": "",
     "tags": "",
     "date": "2022-11-14 00:00:00 +0100",
-    
-
-
-
-
-
-    
-    "snippet": "The MVP for a model serving cloud-native solution.At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the centra...",
-    "content": "The MVP for a model serving cloud-native solution.At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the central metric in this task - RPS (requests per second) - and the first step taken to improve it.Typically, RPS is associated with Site Reliability Engineering. Often, it involves web services with heavy backends, sprawling databases, and a large pool of users. For example, the SRE team at Google recently exceeded 3,500 people. Ben Treynor, VP of SRE at Google, explains: “Typically, we hire about a 50-50 mix of people who have more of a software background and people who have more of a systems engineering background. It seems to be a really good mix.”In the field of machine learning, I would highlight some preliminary knowledge required for developing such an ML environment:  DevOps and infrastructure development;  Building end-to-end ML pipelines: from data preprocessing and feature selection to parameter tuning;  Understanding the open-source world of model deployment and how to leverage it to avoid reinventing the wheel.Ultimately, it becomes a mix of hardcore engineering, non-trivial analytics, and system design. It sounds inspiring until you start measuring the system’s performance.🐌 RPS = 21In its most basic version, we achieved 21 requests per second, or a minute-long wait for a response under a load of around 1200 users. Unacceptable. We need to identify the bottleneck.In the image below, the folks at MLflow propose a model storage architecture. AWS S3 is used for storing the weights. However, data transfer occurs over the network (a.k.a. slowly).It was noticed that the model weights were being transmitted over the network with every request to the environment, which was a severe bottleneck. Let’s keep the models in RAM after the initial transfer.🏃‍♂️ RPS = 155A simple heuristic, yet the acceleration is more than sevenfold. In the end, through a trade-off between memory and speed, we achieved acceptable system performance for the first version of the product. This means we can proudly call ourselves MLOps engineers."
+    "content": "The MVP for a model serving cloud-native solution.  At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the cent..."
   }
   
 ]

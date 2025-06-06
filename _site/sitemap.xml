@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://msaidov.com/the-rps-race/</loc>
+<loc>http://localhost:4000/the-rps-race/</loc>
 <lastmod>2025-02-16T08:47:25+01:00</lastmod>
 </url>
 <url>
-<loc>https://msaidov.com/asian-journey/</loc>
+<loc>http://localhost:4000/asian-journey/</loc>
 <lastmod>2025-02-16T08:47:25+01:00</lastmod>
 </url>
 <url>
-<loc>https://msaidov.com/coat-corpus-of-artificial-texts/</loc>
+<loc>http://localhost:4000/coat-corpus-of-artificial-texts/</loc>
 <lastmod>2025-02-16T08:47:25+01:00</lastmod>
 </url>
 <url>
-<loc>https://msaidov.com/phi-silica/</loc>
+<loc>http://localhost:4000/phi-silica/</loc>
 <lastmod>2025-02-16T08:47:25+01:00</lastmod>
 </url>
 <url>
-<loc>https://msaidov.com/about/</loc>
-<lastmod>2025-02-17T06:20:20+01:00</lastmod>
+<loc>http://localhost:4000/automated-prompt-engineering/</loc>
+<lastmod>2025-06-06T00:00:00+02:00</lastmod>
 </url>
 <url>
-<loc>https://msaidov.com/</loc>
+<loc>http://localhost:4000/about/</loc>
+<lastmod>2025-06-06T10:19:50+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
 </url>
 </urlset>
