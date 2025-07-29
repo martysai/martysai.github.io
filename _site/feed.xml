@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Marat Saidov</title>
   <subtitle>My personal blog about AI and software development.</subtitle>
-  <updated>2025-06-06T10:19:50+02:00</updated>
+  <updated>2025-07-29T21:53:21+02:00</updated>
   <author>
     <name>Marat Saidov</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,28 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Budapest Data Ml Forum 2025</title>
+    <link href="http://localhost:4000/budapest-data-ml-forum/" rel="alternate" type="text/html" title="Budapest Data Ml Forum 2025" />
+    <published>2025-07-29T00:00:00+02:00</published>
+  
+    <updated>2025-07-29T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/budapest-data-ml-forum/</id>
+    <content type="text/html" src="http://localhost:4000/budapest-data-ml-forum/" />
+    <author>
+      <name>Marat Saidov</name>
+    </author>
+
+  
+    
+  
+
+  <summary>On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on ...</summary>
+
+  </entry>
 
   
   <entry>
@@ -103,28 +125,6 @@
   
 
   <summary>I am fond of the Western attitude towards a gap year.  There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc.  In my case, the gap year turned out to be involuntary. Furthermore, it extended far beyond a year. Nevertheless, it harmoniously aligned with the Western approach.  I left Russia at the end of September and only found a new hom...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>The Rps Race</title>
-    <link href="http://localhost:4000/the-rps-race/" rel="alternate" type="text/html" title="The Rps Race" />
-    <published>2022-11-14T00:00:00+01:00</published>
-  
-    <updated>2025-02-16T08:47:25+01:00</updated>
-  
-    <id>http://localhost:4000/the-rps-race/</id>
-    <content type="text/html" src="http://localhost:4000/the-rps-race/" />
-    <author>
-      <name>Marat Saidov</name>
-    </author>
-
-  
-    
-  
-
-  <summary>The MVP for a model serving cloud-native solution.  At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the central metric in this task - RPS (requests per second) - and the first step taken to improve it.  Typically, RPS is associated with Site Reliability Engineering. Often, it involves web services with heav...</summary>
 
   </entry>
 

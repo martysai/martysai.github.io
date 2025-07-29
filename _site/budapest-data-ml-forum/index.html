@@ -30,24 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="How To Automate Prompt Engineering With Opro" />
+<meta property="og:title" content="Budapest Data Ml Forum 2025" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs)." />
-<meta property="og:description" content="In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs)." />
-<link rel="canonical" href="http://localhost:4000/automated-prompt-engineering/" />
-<meta property="og:url" content="http://localhost:4000/automated-prompt-engineering/" />
+<meta name="description" content="On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model." />
+<meta property="og:description" content="On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model." />
+<link rel="canonical" href="http://localhost:4000/budapest-data-ml-forum/" />
+<meta property="og:url" content="http://localhost:4000/budapest-data-ml-forum/" />
 <meta property="og:site_name" content="Marat Saidov" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-06-06T00:00:00+02:00" />
+<meta property="article:published_time" content="2025-07-29T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="How To Automate Prompt Engineering With Opro" />
+<meta property="twitter:title" content="Budapest Data Ml Forum 2025" />
 <meta name="twitter:site" content="@marat_ml" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-06T00:00:00+02:00","datePublished":"2025-06-06T00:00:00+02:00","description":"In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).","headline":"How To Automate Prompt Engineering With Opro","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/automated-prompt-engineering/"},"url":"http://localhost:4000/automated-prompt-engineering/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-29T00:00:00+02:00","datePublished":"2025-07-29T00:00:00+02:00","description":"On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model.","headline":"Budapest Data Ml Forum 2025","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/budapest-data-ml-forum/"},"url":"http://localhost:4000/budapest-data-ml-forum/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>How To Automate Prompt Engineering With Opro | Marat Saidov
+  <title>Budapest Data Ml Forum 2025 | Marat Saidov
   </title>
 
   <!--
@@ -391,7 +391,7 @@
         
           
             
-              <span>How To Automate Prompt Engineering With Opro</span>
+              <span>Budapest Data Ml Forum 2025</span>
             
 
           
@@ -589,7 +589,7 @@
 
 <article class="px-1" data-toc="false">
   <header>
-    <h1 data-toc-skip>How To Automate Prompt Engineering With Opro</h1>
+    <h1 data-toc-skip>Budapest Data Ml Forum 2025</h1>
     
 
     <div class="post-meta text-muted">
@@ -606,13 +606,13 @@
 
 <time
   
-  data-ts="1749160800"
+  data-ts="1753740000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun  6, 2025
+  Jul 29, 2025
 </time>
 
       </span>
@@ -661,7 +661,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="340 words"
+  title="182 words"
 >
   <em>1 min</em> read</span>
 
@@ -673,32 +673,23 @@
   
 
   <div class="content">
-    <p>In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).</p>
+    <p>On June 18, I gave an online talk at the <a href="https://budapestdataml.com/en/">Budapest Data+ML Forum</a>. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model.</p>
 
-<p>For example, CoT with a help of reasoning models (e.g., DeepSeek) in a manual setting has proven to be a default approach to prompt engineering. Since a manual approach can consume a significant amount of engineer’s time, this sets the stage for introducing the <strong>Optimization by PROmpting (OPRO)</strong> approach.</p>
+<p><a href="/assets/budapest-data-ml-bears.jpg" class="popup img-link shimmer"><img src="/assets/budapest-data-ml-bears.jpg" alt="OPRO" width="500" loading="lazy"></a></p>
 
-<p>The OPRO method leverages LLMs as optimizers, with their code being publicly available: <a href="https://github.com/shirindehghani/OPRO">google-deepmind/opro</a>. OPRO authors claim that it is feasible to achieve improvements in hard prompts for various tasks, including <a href="https://github.com/suzgunmirac/BIG-Bench-Hard">BIG Bench Hard</a> which is a diverse evaluation suites. That makes OPRO appealing to try for any use case that requires a manual prompt engineering.</p>
-
-<p>Here is the diagram that represents how OPRO is operating throughout training:</p>
-
-<p><a href="/assets/opro-loop-visualization.png" class="popup img-link shimmer"><img src="/assets/opro-loop-visualization.png" alt="OPRO" width="500" loading="lazy"></a></p>
-
-<p>In order to specify OPRO for one’s task, it is required to define the following parts:</p>
+<p>I covered a diverse set of approaches our team has applied for the model’s optimization, including:</p>
 <ul>
-  <li><strong>Training corpora</strong>. Task-specific data. For example, for text generation problems such as machine translation, summarization or paraphrasing, it is a set of aligned pairs between sources and references.</li>
-  <li><strong>Meta-prompt</strong>. This is what the optimizer gets as an input to make an optimization step. There is a thorough explanation of the meta-prompt design <a href="https://arxiv.org/abs/2309.03409">in the original paper</a>.</li>
-  <li><strong>Optimization objective</strong>. Should be handcrafted carefully. The easiest case is when it is possible to stick to accuracy. More complicated use cases involve the addition of LLM-as-a-judge approaches.</li>
-  <li><strong>LLM API access</strong>. Since LLM as an optimizer is a central concept of OPRO, the user should have an API access and should be ready to spend dozens of thousands of processed tokens per training run.</li>
+  <li><a href="https://arxiv.org/abs/2404.00456">QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs</a>. One of the best existing approaches toward outlier removal and subsequent quantization.</li>
+  <li><a href="https://arxiv.org/abs/2401.15077">EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty</a>. Speculative decoding that gave a throughput boost during Phi Silica generation.</li>
 </ul>
 
-<p>Finally, I can recommend to use OPRO when a user:</p>
-<ol>
-  <li>Either optimizes the prompt of the Large Language Model which is capable of generating diverse outputs and can show large optimization objective scores.</li>
-  <li>Or is not expecting the prompt to which OPRO converged to as a final version.</li>
-</ol>
+<p>More importantly, I focused on my personal contributions as well:</p>
+<ul>
+  <li><a href="https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica#text-intelligence-skills">Rewrite</a>: a publicly available paraphrasing tool shipped with multiple tones.</li>
+  <li><a href="https://huggingface.co/docs/peft/en/conceptual_guides/prompting">Soft prompts</a> and <a href="https://huggingface.co/docs/peft/en/package_reference/lora">LoRA</a> adapters for quality improvements in Rewrite.</li>
+</ul>
 
-<p>In my use case, the optimization objective tended to fluctuate around some threshold throughout several training launches.</p>
-
+<p>I’m pleased with the steady progress toward practical, small language models. If you’re experimenting with on-device LMs on Copilot+ PCs, I’d love to compare benchmarks – feel free to reach out.</p>
 
   </div>
 
@@ -740,21 +731,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=How%20To%20Automate%20Prompt%20Engineering%20With%20Opro%20-%20Marat%20Saidov&url=http%3A%2F%2Flocalhost%3A4000%2Fautomated-prompt-engineering%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Budapest%20Data%20Ml%20Forum%202025%20-%20Marat%20Saidov&url=http%3A%2F%2Flocalhost%3A4000%2Fbudapest-data-ml-forum%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=How%20To%20Automate%20Prompt%20Engineering%20With%20Opro%20-%20Marat%20Saidov&u=http%3A%2F%2Flocalhost%3A4000%2Fautomated-prompt-engineering%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Budapest%20Data%20Ml%20Forum%202025%20-%20Marat%20Saidov&u=http%3A%2F%2Flocalhost%3A4000%2Fbudapest-data-ml-forum%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fautomated-prompt-engineering%2F&text=How%20To%20Automate%20Prompt%20Engineering%20With%20Opro%20-%20Marat%20Saidov" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fbudapest-data-ml-forum%2F&text=Budapest%20Data%20Ml%20Forum%202025%20-%20Marat%20Saidov" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -930,22 +921,18 @@
 
   
     <a
-      href="/phi-silica/"
+      href="/automated-prompt-engineering/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Phi Silica Small But Mighty Small Language Model</p>
+      <p>How To Automate Prompt Engineering With Opro</p>
     </a>
   
 
   
-    <a
-      href="/budapest-data-ml-forum/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Budapest Data Ml Forum 2025</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
