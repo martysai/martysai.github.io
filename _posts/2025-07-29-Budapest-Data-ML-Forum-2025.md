@@ -1,4 +1,5 @@
 ---
+title: "Budapest Data ML Forum 2025"
 permalink: /budapest-data-ml-forum/
 header:
   overlay_color: "#333"

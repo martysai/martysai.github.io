@@ -1,4 +1,5 @@
 ---
+title: "Corpus of Artificial Texts"
 permalink: /coat-corpus-of-artificial-texts/
 ---
 

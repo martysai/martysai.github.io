@@ -1,4 +1,5 @@
 ---
+title: "Asian Journey in 2022"
 permalink: /asian-journey/
 ---
 

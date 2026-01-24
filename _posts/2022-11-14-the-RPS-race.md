@@ -1,4 +1,5 @@
 ---
+title: "The RPS Race"
 permalink: /the-rps-race/
 ---
 

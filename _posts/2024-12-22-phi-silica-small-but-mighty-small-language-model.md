@@ -1,4 +1,5 @@
 ---
+title: "Phi Silica: Small but Mighty Small Language Model"
 permalink: /phi-silica/
 header:
   overlay_color: "#333"
