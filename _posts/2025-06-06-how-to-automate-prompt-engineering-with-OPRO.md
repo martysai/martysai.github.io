@@ -1,4 +1,5 @@
 ---
+title: "How to Automate Prompt Engineering with OPRO"
 permalink: /automated-prompt-engineering/
 header:
   overlay_color: "#333"
