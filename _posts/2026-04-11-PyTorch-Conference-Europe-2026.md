@@ -12,6 +12,8 @@ share: false
 
 I flew to Paris to attend [PyTorch Conference Europe](https://pytorch.org/event/pytorch-conference-europe/) as a listener. Two days focused on talks around open source and what's happening across the industry.
 
+![PyTorch Conference Europe 2026](/assets/pytorchcon-europe-2026.jpg){: width="600" }
+
 What surprised me: remarkably little hype around agents, but a lot of concrete, practical content. Key highlights below, in order.
 
 **1. HuggingFace announced [Kernels Hub](https://huggingface.co/docs/kernels/index).** Why this matters: there are many accelerators, and for some of them certain attention implementations run fast while for others they're slow. Having a centralized hub of kernels means you don't have to write them from scratch every time. HF also promises to audit kernels for vulnerabilities to prevent remote code execution on the user's side.

@@ -12,7 +12,7 @@ share: false
 
 On June 18, I gave an online talk at the [Budapest Data+ML Forum](https://budapestdataml.com/en/). The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model.
 
-![OPRO](/assets/budapest-data-ml-bears.jpg){: width="500" }
+![Budapest Data ML Forum](/assets/budapest-data-ml-bears.jpg){: width="500" }
 
 I covered a diverse set of approaches our team has applied for the model's optimization, including:
 * [QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs](https://arxiv.org/abs/2404.00456). One of the best existing approaches toward outlier removal and subsequent quantization.
