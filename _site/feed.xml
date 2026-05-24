@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Marat Saidov</title>
   <subtitle>My personal blog about AI and software development.</subtitle>
-  <updated>2025-07-29T21:53:21+02:00</updated>
+  <updated>2026-05-24T17:39:05+02:00</updated>
   <author>
     <name>Marat Saidov</name>
     <uri>http://localhost:4000/</uri>
@@ -13,18 +13,84 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2025 Marat Saidov </rights>
+  <rights> © 2026 Marat Saidov </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>Budapest Data Ml Forum 2025</title>
-    <link href="http://localhost:4000/budapest-data-ml-forum/" rel="alternate" type="text/html" title="Budapest Data Ml Forum 2025" />
+    <title>A Chat-Based Job-Matching Agent</title>
+    <link href="http://localhost:4000/job-listing-matcher/" rel="alternate" type="text/html" title="A Chat-Based Job-Matching Agent" />
+    <published>2026-05-24T00:00:00+02:00</published>
+  
+    <updated>2026-05-24T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/job-listing-matcher/</id>
+    <content type="text/html" src="http://localhost:4000/job-listing-matcher/" />
+    <author>
+      <name>Marat Saidov</name>
+    </author>
+
+  
+    
+  
+
+  <summary>I was the technical lead on this project — the final project for the Introduction to AI Agents course at Data Sanity. I designed the end-to-end architecture, set the overall direction, and filled in the gaps across the stack as the team built it out. The code is on GitHub.    The core idea: free text carries more signal than checkboxes. Intent like “a senior backend role, remote, fintech, that ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>PyTorch Conference Europe 2026</title>
+    <link href="http://localhost:4000/pytorch-conference-europe-2026/" rel="alternate" type="text/html" title="PyTorch Conference Europe 2026" />
+    <published>2026-04-11T00:00:00+02:00</published>
+  
+    <updated>2026-04-11T10:28:50+02:00</updated>
+  
+    <id>http://localhost:4000/pytorch-conference-europe-2026/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch-conference-europe-2026/" />
+    <author>
+      <name>Marat Saidov</name>
+    </author>
+
+  
+    
+  
+
+  <summary>I flew to Paris to attend PyTorch Conference Europe as a listener. Two days focused on talks around open source and what’s happening across the industry.    What surprised me: remarkably little hype around agents, but a lot of concrete, practical content. Key highlights below, in order.  1. HuggingFace announced Kernels Hub. Why this matters: there are many accelerators, and for some of them ce...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>OpenTalks.AI 2026: Production-Ready Adapters for On-Device Language Models</title>
+    <link href="http://localhost:4000/opentalks-ai-2026/" rel="alternate" type="text/html" title="OpenTalks.AI 2026: Production-Ready Adapters for On-Device Language Models" />
+    <published>2026-03-07T00:00:00+01:00</published>
+  
+    <updated>2026-03-07T10:18:10+01:00</updated>
+  
+    <id>http://localhost:4000/opentalks-ai-2026/</id>
+    <content type="text/html" src="http://localhost:4000/opentalks-ai-2026/" />
+    <author>
+      <name>Marat Saidov</name>
+    </author>
+
+  
+    
+  
+
+  <summary>I spoke at OpenTalks.AI in Belgrade, Serbia. My talk covered the end-to-end journey of building production-ready adapters for on-device language models, from tuning through evaluation to real-world shipping.    The session walked through several core areas:     Adapter tuning for on-device models. How LoRA adapters are used to specialize a small base model (Phi Silica) for distinct skills — eac...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Budapest Data ML Forum 2025</title>
+    <link href="http://localhost:4000/budapest-data-ml-forum/" rel="alternate" type="text/html" title="Budapest Data ML Forum 2025" />
     <published>2025-07-29T00:00:00+02:00</published>
   
-    <updated>2025-07-29T00:00:00+02:00</updated>
+    <updated>2026-04-11T10:28:50+02:00</updated>
   
     <id>http://localhost:4000/budapest-data-ml-forum/</id>
     <content type="text/html" src="http://localhost:4000/budapest-data-ml-forum/" />
@@ -42,11 +108,11 @@
 
   
   <entry>
-    <title>How To Automate Prompt Engineering With Opro</title>
-    <link href="http://localhost:4000/automated-prompt-engineering/" rel="alternate" type="text/html" title="How To Automate Prompt Engineering With Opro" />
+    <title>How to Automate Prompt Engineering with OPRO</title>
+    <link href="http://localhost:4000/automated-prompt-engineering/" rel="alternate" type="text/html" title="How to Automate Prompt Engineering with OPRO" />
     <published>2025-06-06T00:00:00+02:00</published>
   
-    <updated>2025-06-06T00:00:00+02:00</updated>
+    <updated>2026-01-24T13:21:00+01:00</updated>
   
     <id>http://localhost:4000/automated-prompt-engineering/</id>
     <content type="text/html" src="http://localhost:4000/automated-prompt-engineering/" />
@@ -59,72 +125,6 @@
   
 
   <summary>In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).  For example, CoT with a help of reasoning models (e.g., DeepSeek) in a manual setting has proven to be a default approach to prompt engineering. Since a manual approach can consume a significant amount of engineer’s time, this sets the stage for introduci...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Phi Silica Small But Mighty Small Language Model</title>
-    <link href="http://localhost:4000/phi-silica/" rel="alternate" type="text/html" title="Phi Silica Small But Mighty Small Language Model" />
-    <published>2024-12-22T00:00:00+01:00</published>
-  
-    <updated>2025-02-16T08:47:25+01:00</updated>
-  
-    <id>http://localhost:4000/phi-silica/</id>
-    <content type="text/html" src="http://localhost:4000/phi-silica/" />
-    <author>
-      <name>Marat Saidov</name>
-    </author>
-
-  
-    
-  
-
-  <summary>A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.    The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the constraints of NPU resources (since other models, in addition to Phi Silica, also need to fit on the chip).  I also managed to contribute, albeit a little: Windows Blogs.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Corpus Of Artificial Texts</title>
-    <link href="http://localhost:4000/coat-corpus-of-artificial-texts/" rel="alternate" type="text/html" title="Corpus Of Artificial Texts" />
-    <published>2024-09-23T00:00:00+02:00</published>
-  
-    <updated>2025-02-16T08:47:25+01:00</updated>
-  
-    <id>http://localhost:4000/coat-corpus-of-artificial-texts/</id>
-    <content type="text/html" src="http://localhost:4000/coat-corpus-of-artificial-texts/" />
-    <author>
-      <name>Marat Saidov</name>
-    </author>
-
-  
-    
-  
-
-  <summary>I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.    It is published with a help of Cambridge University Press. The work is done during my research assistance at MMCP Lab, HSE University.  CoAT is a large-scale corpus of human-written and AI-generated texts in Russian, spanning 6 domains and 13 different text generati...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Asian Journey In 2022</title>
-    <link href="http://localhost:4000/asian-journey/" rel="alternate" type="text/html" title="Asian Journey In 2022" />
-    <published>2023-02-10T00:00:00+01:00</published>
-  
-    <updated>2025-02-16T08:47:25+01:00</updated>
-  
-    <id>http://localhost:4000/asian-journey/</id>
-    <content type="text/html" src="http://localhost:4000/asian-journey/" />
-    <author>
-      <name>Marat Saidov</name>
-    </author>
-
-  
-    
-  
-
-  <summary>I am fond of the Western attitude towards a gap year.  There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc.  In my case, the gap year turned out to be involuntary. Furthermore, it extended far beyond a year. Nevertheless, it harmoniously aligned with the Western approach.  I left Russia at the end of September and only found a new hom...</summary>
 
   </entry>
 
