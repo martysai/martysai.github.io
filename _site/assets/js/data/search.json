@@ -1,51 +1,84 @@
 [
+  
   {
-    "title": "Budapest Data Ml Forum 2025",
+    "title": "A Chat-Based Job-Matching Agent",
+    "url": "/job-listing-matcher/",
+    "categories": "",
+    "tags": "",
+    "date": "2026-05-24 00:00:00 +0200",
+    "content": "I was the technical lead on this project — the final project for the Introduction to AI Agents course at Data Sanity. I designed the end-to-end architecture, set the overall direction, and filled in the gaps across the stack as the team built it out. The code is on GitHub.    The core idea: free text carries more signal than checkboxes. Intent like “a senior backend role, remote, fintech, that lets me keep Go but pick up Rust” doesn’t fit any dropdown. The agent collects that intent through chat, structures it, and retrieves ranked vacancies — all in the same conversation thread.  Stages  The pipeline has four stages:  1. Conversational profiling. A fast streaming LLM asks one or two questions at a time to build a candidate profile — never a form. Once enough context is collected, it triggers the search.  2. Schema extraction. A more capable model parses the full conversation into a validated Pydantic schema capturing skills, preferred positions, tech stack, location, salary, work mode, and exclusions. Using two distinct LLM tiers keeps latency low without sacrificing extraction accuracy.  3. Hybrid retrieval. A Chroma dense index and an in-memory BM25 index run in parallel over the same vacancy corpus. Their ranked lists are fused via reciprocal-rank-fusion (RRF) — a rank-based approach that handles different score scales cleanly.                 Retrieval       Recall@20                       Dense only       67.1%                 Hybrid (RRF)       75.4%           4. LambdaRank reranker. A LightGBM model reorders the top 20 results using retriever scores alongside 82 schema-derived tabular features: skill overlap, location compatibility, seniority match, salary band, and more. Feature ablations show that structured schema features carry most of the gain — a separate LLM-as-expert grader was tried but added little on top and was removed from the production path.                 Reranker       Recall@1       NDCG@10                       Cosine baseline       55.2%       0.721                 LambdaRank       85.9%       0.936           A background LangGraph ReAct agent keeps the index fresh by scraping Adzuna on a schedule, broadening its queries when results are thin, and hot-merging new listings without restarting the API.  What made this project stand out was the team’s commitment to rigorous evaluation: a wide labeled set of candidates with ground-truth source vacancies, per-stage ablations, and miss-analysis broken down by region and specialization to surface systematic gaps. That discipline is what separated this from a typical course project.  Architecture  The system layers a React chat UI (streaming over SSE) on top of a FastAPI backend, with two distinct LLM roles — a fast model driving live chat, and a more capable one for one-shot schema extraction — and a self-contained ML pipeline for retrieval and reranking. A scheduled LangGraph ReAct agent runs independently in the background, keeping the vacancy index fresh without touching the serving path. All LLM calls go through LiteLLM, making the provider — Claude, Mistral, GitHub Models — swappable without code changes.    Conclusion  Job matching is, at its core, a retrieval and ranking problem — and this project treats it as one. The conversational layer removes friction from the user side; hybrid retrieval and a learned reranker handle the precision on the system side. What I found most valuable in leading this work was seeing how much a principled evaluation setup shapes the entire development process: once you can measure each stage independently, you stop guessing where to invest effort."
+  },
+  
+  {
+    "title": "PyTorch Conference Europe 2026",
+    "url": "/pytorch-conference-europe-2026/",
+    "categories": "",
+    "tags": "",
+    "date": "2026-04-11 00:00:00 +0200",
+    "content": "I flew to Paris to attend PyTorch Conference Europe as a listener. Two days focused on talks around open source and what’s happening across the industry.    What surprised me: remarkably little hype around agents, but a lot of concrete, practical content. Key highlights below, in order.  1. HuggingFace announced Kernels Hub. Why this matters: there are many accelerators, and for some of them certain attention implementations run fast while for others they’re slow. Having a centralized hub of kernels means you don’t have to write them from scratch every time. HF also promises to audit kernels for vulnerabilities to prevent remote code execution on the user’s side.  2. ExecuTorch is now part of PyTorch Core. ExecuTorch matters because niche platforms and accelerators like NPUs exist, and sometimes you want to test open models on-device and compare against production offerings such as Phi Silica. You don’t want to figure out how to compile a model for each specific platform (Qualcomm, Intel, etc.) — ExecuTorch does it for you. Integration with PyTorch Core means the Linux Foundation and Meta will jointly maintain the project, signaling a serious bet on edge AI and open infrastructure.  3. Plenty of on-device talks. I was surprised to realize that on-device ML is no longer niche. Over two days I attended more than five talks exclusively about edge AI. Use cases varied widely:    Meta is embedding ultra-small models into their smart glasses and phones. Energy efficiency is critical, so these are not language models.   Google DeepMind continues to invest in Gemma (v4 is impressive — on-device models now handle tool calling and search).   Intel and Qualcomm are building their own deployment and optimization stacks for their platforms — potential synergies with Microsoft Applied Sciences, making connections with both teams very valuable.   4. I met the developers of Gemma 4 and Edge Gallery for mobile devices. Technically, these are our future direct competitors. Notably, they don’t work with Apple at all — the much-discussed Google–Apple contract for building Apple Foundation Models and fixing Siri is a separate story, unrelated to Edge Gallery and Gemma.  5. Mistral released Voxtral Realtime — a fast, high-quality on-device ASR with streaming support. This could be significant for many on-device scenarios, as voice input is becoming a trend in the edge world.  6. On a personal note, I got to meet the maintainers of HF Transformers and PEFT and pitch our feature requests for PEFT: there are several extensions on top of LoRA that we’d love to see upstream, but the process has been slow so far.  This was PyTorch’s first conference in Europe, and I’m very grateful for that. The main takeaway for me: it’s important to see what’s happening across different corners of the industry — especially at Tier-1 companies."
+  },
+  
+  {
+    "title": "OpenTalks.AI 2026: Production-Ready Adapters for On-Device Language Models",
+    "url": "/opentalks-ai-2026/",
+    "categories": "",
+    "tags": "",
+    "date": "2026-03-07 00:00:00 +0100",
+    "content": "I spoke at OpenTalks.AI in Belgrade, Serbia. My talk covered the end-to-end journey of building production-ready adapters for on-device language models, from tuning through evaluation to real-world shipping.    The session walked through several core areas:     Adapter tuning for on-device models. How LoRA adapters are used to specialize a small base model (Phi Silica) for distinct skills — each skill/flavor gets its own lightweight adapter on top of frozen base weights.   Shipping Rewrite and Summarize. Practical lessons from taking these Text Intelligence skills from prototype to production on Copilot+ PCs — including Rewrite with multiple tone flavors (Auto, Casual, Formal, Concise) and Summarize for condensing long-form content.   Windows App SDK availability. These Text Intelligence capabilities are available through the Windows App SDK, enabling any developer building apps for Copilot+ PCs to integrate on-device language skills directly into their applications.     The Text Intelligence platform is designed so that new skills can be added by training new adapters without retraining the base model.  It was great connecting with the AI community in Belgrade and seeing how rich the advancements in Natural Language Processing in both academia and industry are in 2026."
+  },
+  
+  {
+    "title": "Budapest Data ML Forum 2025",
     "url": "/budapest-data-ml-forum/",
     "categories": "",
     "tags": "",
     "date": "2025-07-29 00:00:00 +0200",
-    "content": "On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical ex..."
+    "content": "On June 18, I gave an online talk at the Budapest Data+ML Forum. The event is a solid, mid-sized conference that draws practitioners from Central Europe; it is a good place to exchange technical expertise with other engineers. My session focused on Phi Silica, a small language model designed to run entirely on Copilot+ PC laptops, and on Rewrite, a publicly available paraphrasing tool built on top of the small language model.    I covered a diverse set of approaches our team has applied for the model’s optimization, including:    QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs. One of the best existing approaches toward outlier removal and subsequent quantization.   EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty. Speculative decoding that gave a throughput boost during Phi Silica generation.   More importantly, I focused on my personal contributions as well:    Rewrite: a publicly available paraphrasing tool shipped with multiple tones.   Soft prompts and LoRA adapters for quality improvements in Rewrite.   I’m pleased with the steady progress toward practical, small language models. If you’re experimenting with on-device LMs on Copilot+ PCs, I’d love to compare benchmarks – feel free to reach out."
   },
+  
   {
-    "title": "How To Automate Prompt Engineering With Opro",
+    "title": "How to Automate Prompt Engineering with OPRO",
     "url": "/automated-prompt-engineering/",
     "categories": "",
     "tags": "",
     "date": "2025-06-06 00:00:00 +0200",
-    "content": "In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).  For example, CoT with a help of reasoning models (e.g.,..."
+    "content": "In the past few years prompt engineering has emerged as a critical technique for optimizing the performance of large language models (LLMs).  For example, CoT with a help of reasoning models (e.g., DeepSeek) in a manual setting has proven to be a default approach to prompt engineering. Since a manual approach can consume a significant amount of engineer’s time, this sets the stage for introducing the Optimization by PROmpting (OPRO) approach.  The OPRO method leverages LLMs as optimizers, with their code being publicly available: google-deepmind/opro. OPRO authors claim that it is feasible to achieve improvements in hard prompts for various tasks, including BIG Bench Hard which is a diverse evaluation suites. That makes OPRO appealing to try for any use case that requires a manual prompt engineering.  Here is the diagram that represents how OPRO is operating throughout training:    In order to specify OPRO for one’s task, it is required to define the following parts:    Training corpora. Task-specific data. For example, for text generation problems such as machine translation, summarization or paraphrasing, it is a set of aligned pairs between sources and references.   Meta-prompt. This is what the optimizer gets as an input to make an optimization step. There is a thorough explanation of the meta-prompt design in the original paper.   Optimization objective. Should be handcrafted carefully. The easiest case is when it is possible to stick to accuracy. More complicated use cases involve the addition of LLM-as-a-judge approaches.   LLM API access. Since LLM as an optimizer is a central concept of OPRO, the user should have an API access and should be ready to spend dozens of thousands of processed tokens per training run.   Finally, I can recommend to use OPRO when a user:    Either optimizes the prompt of the Large Language Model which is capable of generating diverse outputs and can show large optimization objective scores.   Or is not expecting the prompt to which OPRO converged to as a final version.   In my use case, the optimization objective tended to fluctuate around some threshold throughout several training launches."
   },
+  
   {
-    "title": "Phi Silica Small But Mighty Small Language Model",
+    "title": "Phi Silica: Small but Mighty Small Language Model",
     "url": "/phi-silica/",
     "categories": "",
     "tags": "",
     "date": "2024-12-22 00:00:00 +0100",
-    "content": "A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.    The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the con..."
+    "content": "A technical blog about Phi Silica – Microsoft’s on-device language model for NPU-powered Copilot+PCs.    The blog covers PTQ, GQA, KV caches, and strategies to increase context length under the constraints of NPU resources (since other models, in addition to Phi Silica, also need to fit on the chip).  I also managed to contribute, albeit a little: Windows Blogs."
   },
+  
   {
-    "title": "Corpus Of Artificial Texts",
+    "title": "Corpus of Artificial Texts",
     "url": "/coat-corpus-of-artificial-texts/",
     "categories": "",
     "tags": "",
     "date": "2024-09-23 00:00:00 +0200",
-    "content": "I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.    It is published with a help of Cambridge University Press. The wor..."
+    "content": "I am happy to present CoAT: Corpus of Artificial Texts, a robust and a general benchmark for artificial (GenAI) text detection.    It is published with a help of Cambridge University Press. The work is done during my research assistance at MMCP Lab, HSE University.  CoAT is a large-scale corpus of human-written and AI-generated texts in Russian, spanning 6 domains and 13 different text generation models. The study provides insights into artificial text detection capabilities and challenges, highlighting the need for improved detection methods as language models continue to advance."
   },
+  
   {
-    "title": "Asian Journey In 2022",
+    "title": "Asian Journey in 2022",
     "url": "/asian-journey/",
     "categories": "",
     "tags": "",
     "date": "2023-02-10 00:00:00 +0100",
-    "content": "I am fond of the Western attitude towards a gap year.  There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc.  In my case, the gap year tu..."
+    "content": "I am fond of the Western attitude towards a gap year.  There exist travel programs for those who have obtained a BSc and wish to take a break before pursuing their MSc.  In my case, the gap year turned out to be involuntary. Furthermore, it extended far beyond a year. Nevertheless, it harmoniously aligned with the Western approach.  I left Russia at the end of September and only found a new home in February. Although I have yet to tackle lengthy posts about each of the countries I had the opportunity to visit, I desire to showcase the route and document this extraordinary journey.    Kazakhstan 🇰🇿 -&gt; India 🇮🇳 -&gt; Thailand 🇹🇭 -&gt; Malaysia 🇲🇾 -&gt; Thailand Again 🇹🇭 -&gt; Vietnam 🇻🇳… and finally, Serbia 🇷🇸.  The power of such adventures lies in the everyday challenges. New challenges. Ones that had never arisen before. For instance, how does one mount a scooter if they have never even sat on a bicycle? How does one persuade stern Vietnamese border officials at Saigon airport that I am flying to Serbia not as a tourist, but for a new job awaiting me there?  It was truly fascinating. I will never replicate anything similar."
   },
+  
   {
-    "title": "The Rps Race",
+    "title": "The RPS Race",
     "url": "/the-rps-race/",
     "categories": "",
     "tags": "",
     "date": "2022-11-14 00:00:00 +0100",
-    "content": "The MVP for a model serving cloud-native solution.  At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the cent..."
+    "content": "The MVP for a model serving cloud-native solution.  At my previous role, we actively set up a production environment for deploying hundreds of machine learning models. I want to talk about the central metric in this task - RPS (requests per second) - and the first step taken to improve it.  Typically, RPS is associated with Site Reliability Engineering. Often, it involves web services with heavy backends, sprawling databases, and a large pool of users. For example, the SRE team at Google recently exceeded 3,500 people. Ben Treynor, VP of SRE at Google, explains: “Typically, we hire about a 50-50 mix of people who have more of a software background and people who have more of a systems engineering background. It seems to be a really good mix.”  In the field of machine learning, I would highlight some preliminary knowledge required for developing such an ML environment:     DevOps and infrastructure development;   Building end-to-end ML pipelines: from data preprocessing and feature selection to parameter tuning;   Understanding the open-source world of model deployment and how to leverage it to avoid reinventing the wheel.   Ultimately, it becomes a mix of hardcore engineering, non-trivial analytics, and system design. It sounds inspiring until you start measuring the system’s performance.  🐌 RPS = 21  In its most basic version, we achieved 21 requests per second, or a minute-long wait for a response under a load of around 1200 users. Unacceptable. We need to identify the bottleneck.  In the image below, the folks at MLflow propose a model storage architecture. AWS S3 is used for storing the weights. However, data transfer occurs over the network (a.k.a. slowly).  It was noticed that the model weights were being transmitted over the network with every request to the environment, which was a severe bottleneck. Let’s keep the models in RAM after the initial transfer.  🏃‍♂️ RPS = 155  A simple heuristic, yet the acceleration is more than sevenfold. In the end, through a trade-off between memory and speed, we achieved acceptable system performance for the first version of the product. This means we can proudly call ourselves MLOps engineers."
   }
   
 ]

@@ -16,6 +16,8 @@ I was the technical lead on this project — the final project for the *Introduc
 
 The core idea: free text carries more signal than checkboxes. Intent like *"a senior backend role, remote, fintech, that lets me keep Go but pick up Rust"* doesn't fit any dropdown. The agent collects that intent through chat, structures it, and retrieves ranked vacancies — all in the same conversation thread.
 
+## Stages
+
 The pipeline has four stages:
 
 **1. Conversational profiling.** A fast streaming LLM asks one or two questions at a time to build a candidate profile — never a form. Once enough context is collected, it triggers the search.
@@ -48,4 +50,4 @@ The system layers a React chat UI (streaming over SSE) on top of a FastAPI backe
 
 ## Conclusion
 
-Job matching is, at its core, a retrieval and ranking problem — and this project treats it as one. The conversational layer removes friction from the user side; hybrid retrieval and a learned reranker handle the precision on the system side. What I found most valuable in leading this work was seeing how much a principled evaluation setup shapes the entire development process: once you can measure each stage independently, you stop guessing where to invest effort. The project is live and the code is open — I plan to redeploy it with a cleaner setup soon.
+Job matching is, at its core, a retrieval and ranking problem — and this project treats it as one. The conversational layer removes friction from the user side; hybrid retrieval and a learned reranker handle the precision on the system side. What I found most valuable in leading this work was seeing how much a principled evaluation setup shapes the entire development process: once you can measure each stage independently, you stop guessing where to invest effort.
