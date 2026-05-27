@@ -19,3 +19,5 @@ gem "tzinfo-data"
 end
 
 gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
+
+gem "json", ">= 2.7.0"
