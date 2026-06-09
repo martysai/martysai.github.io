@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="About" description="About Marat Saidov, machine learning engineer working on language models and text intelligence.">
+  <article class="site-shell about-page">
+    <header class="about-hero">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src={`${base}/assets/avatar.jpeg`} alt="Marat Saidov" />
+      </div>
+      <div class="about-intro">
+        <div class="eyebrow">About</div>
+        <h1>Marat Saidov</h1>
+        <p class="job-title">Machine Learning Engineer</p>
+        <p>
+          I am a versatile and dedicated engineer with a strong focus on ML product development
+          for natural languages and human speech.
+        </p>
+        <div class="about-links" aria-label="Contact links">
+          <a class="button primary" href="https://t.me/msaidov">Telegram</a>
+          <a class="button" href="https://x.com/marat_ml">𝕏 / Twitter</a>
+          <a class="button" href="https://github.com/martysai">GitHub</a>
+          <a class="button" href="https://www.linkedin.com/in/msaidov">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="about-grid">
+      <section class="about-section prose-lite">
+        <h2>Work</h2>
+        <p>
+          I work at Applied Sciences Group, Microsoft. As part of this group, I contribute to the LLM
+          platform and Text Intelligence scenarios, enabling language models across Microsoft products,
+          including Windows OS.
+        </p>
+      </section>
+
+      <section class="about-section prose-lite">
+        <h2>Publications</h2>
+        <p>
+          Follow the full publication trail on
+          <a href="https://scholar.google.com/citations?user=w9JHvdYAAAAJ&hl=en">Google Scholar</a>.
+        </p>
+        <div class="entry-list">
+          <article class="entry">
+            <h3>CoAT: Corpus of Artificial Texts</h3>
+            <p>
+              A large-scale Russian-language dataset containing both human-written and AI-generated texts.
+            </p>
+            <a href="https://www.cambridge.org/core/journals/natural-language-processing/article/coat-corpus-of-artificial-texts/7E2CA97E21663CC031FB6BAFE56E0046">Cambridge</a>
+          </article>
+          <article class="entry">
+            <h3>LUNA: A Framework for Language Understanding and Naturalness Assessment</h3>
+            <p>
+              A unified interface for 20 NLG evaluation metrics, designed for comprehensive generated-text evaluation.
+            </p>
+            <a href="https://arxiv.org/abs/2401.04522">arXiv</a>
+          </article>
+          <article class="entry">
+            <h3>Findings of the RuATD Shared Task 2022</h3>
+            <p>
+              Results from the Dialogue Evaluation shared task on artificial text detection in Russian.
+            </p>
+            <a href="https://arxiv.org/abs/2206.01583">arXiv</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section prose-lite">
+        <h2>Projects</h2>
+        <div class="entry-list">
+          <article class="entry">
+            <h3>Artificial Text Detection</h3>
+            <p>
+              My BSc thesis project studying how language models distinguish artificial texts from human-written ones,
+              connected with my research at CPLab.
+            </p>
+            <a href="https://github.com/martysai/artificial-text-detection">GitHub</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

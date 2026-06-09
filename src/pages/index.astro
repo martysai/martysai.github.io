@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+type Post = Awaited<ReturnType<typeof getCollection<'posts'>>>[number];
+
+const posts = (await getCollection('posts'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => Number(b.data.pubDate ?? 0) - Number(a.data.pubDate ?? 0));
+const featured = posts[0];
+const rest = posts.slice(1, 7);
+const formatDate = (date?: Date) => date ? new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date) : '';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const slugOf = (post: { id: string }) => post.id.replace(/\.(md|mdx)$/, '').toLowerCase();
+const cleanExcerpt = (body = '') => body
+  .replace(/^---[\s\S]*?---/, '')
+  .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+  .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+  .replace(/<[^>]+>/g, '')
+  .replace(/[#*_`>\[\]()]/g, '')
+  .replace(/\s+/g, ' ')
+  .trim();
+const excerptOf = (post: Post, fallback = 'A technical note from the archive, refreshed in the new research-blog layout.') => {
+  const text = post.data.description ?? cleanExcerpt(post.body ?? '');
+  return text ? `${text.slice(0, 148).replace(/\s+\S*$/, '')}…` : fallback;
+};
+const imageOf = (post?: Post) => {
+  if (!post) return '';
+  if (post.data.heroImage) return post.data.heroImage;
+  const match = (post.body ?? '').match(/!\[[^\]]*\]\(([^)]+)\)/);
+  return match?.[1] ?? '';
+};
+---
+<BaseLayout>
+  <section class="site-shell section-head home-section-head">
+    <p>Latest writing</p>
+    <span>Selected notes by Marat Saidov.</span>
+  </section>
+
+  <section class="site-shell">
+    <div class="grid">
+      {featured && (
+        <a class="card featured" href={`${base}/blog/${slugOf(featured)}/`}>
+          {imageOf(featured) && <img class="card-media" src={imageOf(featured)} alt="" loading="lazy" />}
+          <div class="card-body">
+            <div>
+              <div class="date">Latest · {formatDate(featured.data.pubDate)}</div>
+              <h2>{featured.data.title}</h2>
+            </div>
+            <p>{excerptOf(featured)}</p>
+          </div>
+        </a>
+      )}
+      {rest.map((post) => (
+        <a class="card" href={`${base}/blog/${slugOf(post)}/`}>
+          {imageOf(post) && <img class="card-media" src={imageOf(post)} alt="" loading="lazy" />}
+          <div class="card-body">
+            <div>
+              <div class="date">{formatDate(post.data.pubDate)}</div>
+              <h2>{post.data.title}</h2>
+            </div>
+            <p>{excerptOf(post)}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

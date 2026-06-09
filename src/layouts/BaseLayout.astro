@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const siteName = 'Marat Saidov';
+const {
+  title = 'Marat Saidov — AI systems, research notes, and blog posts',
+  description = 'Personal research-style blog by Marat Saidov.',
+} = Astro.props;
+const pageTitle = title.includes(siteName) ? title : `${title} — ${siteName}`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell nav">
+        <a class="brand" href={`${base}/`}>Marat Saidov</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href={`${base}/`}>Home</a>
+          <a href={`${base}/blog/`}>Blog posts</a>
+          <a href={`${base}/about/`}>About</a>
+          <a href="https://github.com/martysai">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="site-shell footer-inner">
+        <p>Marat Saidov — notes on AI systems, research, and engineering practice.</p>
+        <a href="https://github.com/martysai">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
