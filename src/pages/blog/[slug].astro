@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({ params: { slug: post.id.replace(/\.(md|mdx)$/, '').toLowerCase() }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const formatDate = (date?: Date) => date ? new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(date) : '';
+---
+<BaseLayout title={post.data.title} description={post.data.description ?? `Blog post by Marat Saidov: ${post.data.title}`}>
+  <article class="site-shell">
+    <header class="article-header">
+      <div class="eyebrow">Blog post</div>
+      <h1 class="article-title">{post.data.title}</h1>
+      <div class="article-meta">
+        <span>{formatDate(post.data.pubDate)}</span>
+      </div>
+    </header>
+    <div class="article-layout">
+      <div class="prose">
+        <Content />
+      </div>
+      <aside class="aside">
+        <p><strong>About this note</strong></p>
+        <p>Part of Marat Saidov’s personal archive on AI engineering, production ML, and applied research.</p>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
