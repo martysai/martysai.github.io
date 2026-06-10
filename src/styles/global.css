@@ -162,7 +162,7 @@ img { max-width: 100%; height: auto; border-radius: 18px; }
 .callout strong { color: var(--accent-2); }
 .chart-card, .diagram-card { margin: 32px 0; padding: 20px; border: 1px solid var(--border); border-radius: 24px; background: var(--paper); box-shadow: var(--shadow); font-family: var(--font-sans); overflow-x: auto; }
 .chart-card h3, .diagram-card h3 { margin: 0 0 14px; letter-spacing: -0.04em; }
-.prose .diagram-card img { display: block; width: 100%; min-width: 720px; border-radius: 16px; background: #fbfaf6; }
+.prose .diagram-card img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 16px; background: #fbfaf6; }
 .prose .diagram-card figcaption { margin-top: 12px; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 .plot-target svg { width: 100%; height: auto; overflow: visible; }
 .caption { color: var(--muted); font-size: 0.88rem; margin-top: 14px; font-family: var(--font-sans); }
