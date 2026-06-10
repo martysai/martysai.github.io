@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Software testing flow with OpenClaw, Crabbox, and Daytona</title>
+  <desc id="desc">The OpenClaw agent on an Azure VM delegates heavy software testing to an isolated development box created through Daytona and Crabbox, then receives logs and artifacts back.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#474037"/></marker>
+    <linearGradient id="vm" x1="0" x2="1"><stop offset="0" stop-color="#eef4ff"/><stop offset="1" stop-color="#f7fbff"/></linearGradient>
+    <linearGradient id="box" x1="0" x2="1"><stop offset="0" stop-color="#f5fff7"/><stop offset="1" stop-color="#eefaf6"/></linearGradient>
+    <style>
+      .bg{fill:#fbfaf6}.zone{fill:#fffefa;stroke:#e3dacc;stroke-width:2}.title{font:760 22px system-ui,-apple-system,Segoe UI,sans-serif;fill:#171614}.zoneTitle{font:760 17px system-ui,-apple-system,Segoe UI,sans-serif;fill:#171614}.label{font:760 17px system-ui,-apple-system,Segoe UI,sans-serif;fill:#171614}.sub{font:13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#655f56}.tiny{font:12px system-ui,-apple-system,Segoe UI,sans-serif;fill:#655f56}.box{fill:#fff;stroke:#d8cdbc;stroke-width:2}.blue{fill:url(#vm);stroke:#8fb0f0}.green{fill:url(#box);stroke:#83c7a2}.sand{fill:#f8f1e6;stroke:#d7bd93}.orange{fill:#fff4ec;stroke:#e4b08c}.line{fill:none;stroke:#474037;stroke-width:2.2;marker-end:url(#arrow)}.soft{fill:none;stroke:#8e887d;stroke-width:1.8;stroke-dasharray:7 7;marker-end:url(#arrow)}.pill{fill:#171614}.pillText{font:700 12px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fffefa;letter-spacing:.06em}.cmd{font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2b2925}
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="760" rx="34"/>
+  <text class="title" x="70" y="58">Software testing without overloading the agent VM</text>
+  <text class="sub" x="70" y="84">OpenClaw stays responsive while Crabbox asks Daytona for a disposable dev box to run heavier tests and builds.</text>
+
+  <rect class="zone" x="58" y="120" width="320" height="540" rx="28"/>
+  <text class="zoneTitle" x="88" y="158">Azure VM</text>
+  <rect class="box blue" x="88" y="190" width="260" height="94" rx="22"/>
+  <text class="label" x="128" y="228">OpenClaw agent</text>
+  <text class="sub" x="128" y="252">chat · repo context · approvals</text>
+  <rect class="box sand" x="88" y="334" width="260" height="94" rx="22"/>
+  <text class="label" x="128" y="372">Crabbox CLI</text>
+  <text class="cmd" x="128" y="396">crabbox run npm test</text>
+  <rect class="box orange" x="88" y="492" width="260" height="94" rx="22"/>
+  <text class="label" x="128" y="529">Local VM limits</text>
+  <text class="sub" x="128" y="553">small RAM · keep assistant alive</text>
+
+  <rect class="zone" x="430" y="120" width="300" height="540" rx="28"/>
+  <text class="zoneTitle" x="460" y="158">Daytona</text>
+  <rect class="box green" x="462" y="220" width="236" height="104" rx="22"/>
+  <text class="label" x="514" y="258">Control plane</text>
+  <text class="sub" x="504" y="282">create · start · destroy</text>
+  <rect class="box" x="462" y="406" width="236" height="104" rx="22"/>
+  <text class="label" x="520" y="444">Workspace</text>
+  <text class="sub" x="494" y="468">repo checkout + environment</text>
+
+  <rect class="zone" x="782" y="120" width="340" height="540" rx="28"/>
+  <text class="zoneTitle" x="812" y="158">Ephemeral dev box</text>
+  <rect class="box green" x="816" y="190" width="272" height="90" rx="22"/>
+  <text class="label" x="854" y="228">Install dependencies</text>
+  <text class="sub" x="854" y="252">isolated from agent host</text>
+  <rect class="box green" x="816" y="326" width="272" height="90" rx="22"/>
+  <text class="label" x="882" y="364">Run gates</text>
+  <text class="sub" x="854" y="388">tests · typecheck · build · lint</text>
+  <rect class="box sand" x="816" y="462" width="272" height="90" rx="22"/>
+  <text class="label" x="870" y="500">Return evidence</text>
+  <text class="sub" x="854" y="524">logs · exit codes · artifacts</text>
+
+  <path class="line" d="M218 284 L218 334"/>
+  <path class="line" d="M348 381 C390 381 410 272 462 272"/>
+  <path class="line" d="M698 272 C746 272 766 235 816 235"/>
+  <path class="line" d="M952 280 L952 326"/>
+  <path class="line" d="M952 416 L952 462"/>
+  <path class="soft" d="M816 507 C690 600 462 608 348 381"/>
+  <path class="soft" d="M816 507 C642 690 262 680 218 586"/>
+
+  <rect class="pill" x="438" y="690" width="304" height="32" rx="16"/>
+  <text class="pillText" x="464" y="711">HEAVY TESTS IN DISPOSABLE BOXES · AGENT VM STAYS SMALL</text>
+</svg>

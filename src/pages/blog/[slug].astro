@@ -19,6 +19,11 @@ const formatDate = (date?: Date) => date ? new Intl.DateTimeFormat('en', { month
       <div class="article-meta">
         <span>{formatDate(post.data.pubDate)}</span>
       </div>
+      {post.data.heroImage && (
+        <figure class="article-hero-image">
+          <img src={post.data.heroImage} alt="" loading="eager" />
+        </figure>
+      )}
     </header>
     <div class="article-layout">
       <div class="prose">
