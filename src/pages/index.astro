@@ -22,7 +22,8 @@ const cleanExcerpt = (body = '') => body
   .trim();
 const excerptOf = (post: Post, fallback = 'A technical note from the archive, refreshed in the new research-blog layout.') => {
   const text = post.data.description ?? cleanExcerpt(post.body ?? '');
-  return text ? `${text.slice(0, 148).replace(/\s+\S*$/, '')}…` : fallback;
+  if (!text) return fallback;
+  return text.length > 148 ? `${text.slice(0, 148).replace(/\s+\S*$/, '')}…` : text;
 };
 const imageOf = (post?: Post) => {
   if (!post) return '';
@@ -33,7 +34,7 @@ const imageOf = (post?: Post) => {
 ---
 <BaseLayout>
   <section class="site-shell section-head home-section-head">
-    <p>Writing</p>
+    <p>Blog posts</p>
   </section>
 
   <section class="site-shell">

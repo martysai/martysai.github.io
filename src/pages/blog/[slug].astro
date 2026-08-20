@@ -25,14 +25,16 @@ const formatDate = (date?: Date) => date ? new Intl.DateTimeFormat('en', { month
         </figure>
       )}
     </header>
-    <div class="article-layout">
+    <div class:list={['article-layout', !post.data.asideNote && 'article-layout-wide']}>
       <div class="prose">
         <Content />
       </div>
-      <aside class="aside">
-        <p><strong>About this note</strong></p>
-        <p>This blog post was heavily written with a use of SvetlanaClaw.</p>
-      </aside>
+      {post.data.asideNote && (
+        <aside class="aside">
+          <p><strong>About this note</strong></p>
+          <p>{post.data.asideNote}</p>
+        </aside>
+      )}
     </div>
   </article>
 </BaseLayout>

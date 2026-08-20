@@ -4,6 +4,7 @@ description: "How I set up a practical personal agent around OpenClaw, an Azure 
 permalink: /building-personalized-agent-openclaw-with-azure-and-github-copilot/
 pubDate: 2026-06-10
 heroImage: /assets/openclaw-azure-logo.png
+asideNote: "This blog post was heavily written with a use of SvetlanaClaw."
 tags:
   - agents
   - openclaw
