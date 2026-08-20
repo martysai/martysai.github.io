@@ -71,6 +71,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <h2>Projects</h2>
         <div class="entry-list">
           <article class="entry">
+            <h3>Audio Watermarking</h3>
+            <p>
+              At PSIML 11 I mentored a 5-day student project on audio watermark robustness: we trained an AudioSeal UNet
+              generator against frozen diffusion attackers (SGMSE, AudioLDM) and a frozen detector on 4×A100, notably
+              improving robustness to simpler attacks. Models on Hugging Face, code on GitHub.
+            </p>
+            <a href="https://github.com/martysai/psiml11-audio-with-diffusion">GitHub</a>
+            <a href="https://huggingface.co/collections/msaidov/audioseal-robustness-to-diffusion-attacks">Hugging Face</a>
+          </article>
+          <article class="entry">
             <h3>Artificial Text Detection</h3>
             <p>
               My BSc thesis project studying how language models distinguish artificial texts from human-written ones,
