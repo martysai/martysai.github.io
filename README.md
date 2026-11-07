@@ -23,3 +23,8 @@ https://msaidov.com/
 ```
 
 This repository deploys the Astro site to GitHub Pages for `msaidov.com`.
+
+## Analytics
+
+Plausible Analytics is integrated through version-controlled configuration.
+See [`docs/analytics.md`](docs/analytics.md) for the setup and reuse guide.
