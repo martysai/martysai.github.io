@@ -1,0 +1,21 @@
+---
+import { plausibleAnalytics } from '../../config/analytics';
+
+interface Props {
+  enabled?: boolean;
+  domain?: string;
+  scriptSrc?: string;
+}
+
+const {
+  enabled = plausibleAnalytics.enabled,
+  domain = plausibleAnalytics.domain,
+  scriptSrc = plausibleAnalytics.scriptSrc,
+} = Astro.props;
+---
+
+{
+  enabled && (
+    <script is:inline defer data-domain={domain} src={scriptSrc}></script>
+  )
+}
